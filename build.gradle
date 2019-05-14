@@ -1,4 +1,5 @@
 apply plugin: 'groovy'
+apply plugin: 'codenarc'
 
 repositories {
     mavenCentral()
@@ -9,4 +10,9 @@ dependencies {
 
     testCompile 'org.spockframework:spock-core:1.0-groovy-2.4'
     testCompile 'junit:junit:4.12'
+}
+
+codenarc {
+    ignoreFailures = true
+    configFile = new File('config/codenarc/codenarc.groovy')
 }
